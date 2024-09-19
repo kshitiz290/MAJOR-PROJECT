@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="row">
+    <div class="col-8 mt-3 offset-2">
+        <br>
+    <h3>EDIT YOUR LISTING</h3>
+    <br>
+    <form action="/listings/<%=listing.id%>?_method=PATCH" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3"> 
+            <label for="title" class="form-label">TITLE</label>
+            <input type="text" value="<%=listing.title%>" name="listing[title]" class="form-control" required>
+        </div>
+
+        <div class=" mb-3">
+            <label for="description" class="form-label">DESCRIPTION</label>
+            <textarea name="listing[description]"  type="text" class="form-control" required><%=listing.description%></textarea>
+        </div>
+        <div>
+            <h5>Original Listing Image</h5>
+            <img src="<%=originalimgurl%>" alt="">
+            <br>
+        </div>
+
+        <div class=" mb-3">
+            <label for="image" class="form-label">UPLOAD NEW IMAGE</label>
+            <input type="file" name="listing[image]" value="<%=listing.image%>" class="form-control" >
+        </div>
+        <div class="row">
+        <div class="mb-3 col-4">
+            <label for="price" class="form-label">PRICE</label>
+            <input type="number" value="<%=listing.price%>" name="listing[price]" class="form-control" required>
+        </div>
+        
+        <div class="mb-3 col-8">
+            <label for="location" class="form-label">LOCATION</label>
+            <input type="text" name="listing[location]" value="<%=listing.location%>" class="form-control" required>
+        </div>
+    </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">COUNTRY</label>
+            <input type="text" name="listing[country]" value="<%=listing.country%>" class="form-control" required>
+            <div class="invalid-feedback">Country should be valid !</div>
+        </div>
+        <br><br>
+        <button class="btn edit-btn mb-3">EDIT</button> 
+    </form>
+</div>
+</div>
+<script src="/js/script.js"></script>

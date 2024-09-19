@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <div class="row">
+        <div class="col-8 offset-2 mt-3">
+    <br>
+    <h3>CREATE A NEW LISTING</h3>
+    <br>
+    <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">TITLE</label>
+            <input type="text" placeholder="ENTER A CATCHY TITLE" name="listing[title]" class="form-control" required>
+            <div class="valid-feedback">Title Looks good !</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">DESCRIPTION</label>
+            <textarea name="listing[description]"  type="text" class="form-control" required></textarea>
+            <div class="invalid-feedback">Enter a short description !</div>
+        </div>
+  
+        <div class="mb-3">
+            <label for="image" class="form-label">UPLOAD LISTING IMAGE</label>
+        <input type="file" name="listing[image]" placeholder="ENTER IMAGE URL/LINK" class="form-control" required>
+        </div>
+        
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">PRICE</label>
+            <input  placeholder="ENTER PRICE" name="listing[price]" class="form-control" required>
+            <div class="invalid-feedback">Price should be valid!</div>
+            </div>
+           
+            <div class="mb-3 col-md-8">
+                <label for="location" class="form-label">LOCATION</label>
+            <input type="text" name="listing[location]" placeholder="ENTER LOCATION" class="form-control" required>
+            <div class="invalid-feedback">Location should be valid !</div>
+            </div>
+           
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">COUNTRY</label>
+        <input type="text" name="listing[country]" placeholder="ENTER COUNTRY" class="form-control" required>
+        <div class="invalid-feedback">Country should be valid !</div>
+        </div>
+  
+        <button class="btn add-btn mt-3">ADD</button>
+        <br><br>
+    </form>
+</div>
+</div>
